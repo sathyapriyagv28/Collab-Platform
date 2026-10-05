@@ -248,8 +248,13 @@ socket.on(
   });
 
   socket.on("code-change", async (data) => {
-    const { roomId, code, language } = data;
+  const { roomId, code, language } = data;
 
+  // Send the latest code immediately to other users
+  socket.to(roomId).emit("code-update", code);
+
+  // Save the latest code to database
+  try {
     await Code.findOneAndUpdate(
       { roomId },
       {
@@ -261,12 +266,10 @@ socket.on(
         new: true,
       }
     );
-
-    socket.to(roomId).emit(
-      "code-update",
-      code
-    );
-  });
+  } catch (error) {
+    console.error("Failed to save code:", error);
+  }
+});
 
   socket.on("code-output", ({ roomId, output }) => {
     if (
