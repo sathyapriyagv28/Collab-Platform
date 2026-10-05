@@ -1,4 +1,4 @@
-﻿import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import socket from "../socket";
 import ChatBox from "../components/ChatBox";
@@ -286,7 +286,7 @@ useEffect(() => {
             <small>Chat</small>
           </button>
           <button type="button" className="action-icon" onClick={() => setActivePanel("video")}>
-            <span>📹</span>
+           <span>📹</span>
             <small>Video</small>
           </button>
           <button type="button" className="action-icon" onClick={() => setActivePanel("files")}>

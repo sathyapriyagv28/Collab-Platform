@@ -8,7 +8,7 @@ function FileShare({ roomId }) {
     const fetchFiles = async () => {
         try {
             const res = await axios.get(
-                `https://collaboration-room.onrender.com
+                `https://collab-platform-backend-31r8.onrender.com
 /api/files/${roomId}`
             );
 
@@ -48,7 +48,7 @@ useEffect(() => {
 
         try {
             const res = await axios.post(
-                "https://collaboration-room.onrender.com/api/files/upload",
+                "https://collab-platform-backend-31r8.onrender.com/api/files/upload",
                 formData
             );
 
@@ -70,7 +70,7 @@ useEffect(() => {
     const deleteFile = async (id) => {
     try {
         await axios.delete(
-    `https://collaboration-room.onrender.com
+    `https://collab-platform-backend-31r8.onrender.com
 /api/files/${id}`
 );
 
@@ -117,7 +117,7 @@ alert("File Deleted");
         }}
     >
         <a
-            href={`https://collaboration-room.onrender.com
+            href={`https://collab-platform-backend-31r8.onrender.com
 /uploads/${f.filePath}`}
             target="_blank"
             rel="noreferrer"

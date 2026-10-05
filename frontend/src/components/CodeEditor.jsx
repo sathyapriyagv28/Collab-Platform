@@ -16,7 +16,7 @@ function CodeEditor({ roomId }) {
     const fetchCode = async () => {
       try {
         const res = await axios.get(
-          `https://collaboration-room.onrender.com
+          `https://collab-platform-backend-31r8.onrender.com
 /api/code/${roomId}`
         );
 
