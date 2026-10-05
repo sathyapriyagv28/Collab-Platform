@@ -86,10 +86,10 @@ function VideoCall({ roomId }) {
         }
 
         const peer = new Peer(undefined, {
-          host: "localhost",
-          port: 5000,
-          path: "/peerjs",
-        });
+  host: "collab-platform-backend-31r8.onrender.com",
+  secure: true,
+  path: "/peerjs",
+});
         peerRef.current = peer;
 
         peer.on("open", (peerId) => {
