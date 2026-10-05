@@ -72,7 +72,10 @@ app.use("/peerjs", peerServer);
 // Socket.IO setup
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://collab-platform-mu.vercel.app"
+    ],
     methods: ["GET", "POST"],
   },
 });
